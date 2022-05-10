@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"strings"
-	"unicode"
 
 	"golang.org/x/tour/wc"
 )
@@ -12,11 +11,13 @@ func WordCount(s string) map[string]int {
 
 	m := make(map[string]int)
 
-	f := func(s rune) bool {
-		return !unicode.IsLetter(s) && !unicode.IsNumber(s)
+	f := strings.Fields(s)
+
+	for _, value := range f {
+		m[value]++
 	}
 
-	fmt.Println("Fields are: ", strings.FieldsFunc(s, f))
+	fmt.Println(m)
 
 	return map[string]int{"x": 1}
 }
