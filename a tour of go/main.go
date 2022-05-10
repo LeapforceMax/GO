@@ -20,7 +20,6 @@ func Sqrt(x float64) float64 {
 			//fmt.Println(d)
 			z = y
 			return z
-			break
 		} else {
 			z = y
 		}
